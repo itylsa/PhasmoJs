@@ -1,0 +1,60 @@
+body {
+	background-color: #5a5a5a;
+}
+
+#mainDiv {
+	width: 100%;
+	text-align: center;
+	margin: 5vh auto auto;
+	font-size: 16pt;
+}
+
+#mainTable {
+	width: 100%;
+	text-align: center;
+}
+
+table, tr, td {
+	border: unset;
+	border-spacing: 0;
+}
+
+body > h1 {
+	text-align: center;
+}
+
+#rowGhosts td {
+	padding-bottom: 20px;
+	padding-left: 20px;
+	padding-right: 20px;
+}
+
+#rowGhosts {
+	background-color: #9b9b9b;
+}
+
+.rowEvidence {
+	line-height: 26pt;
+}
+
+.rowEvidence:nth-child(even) {
+	background-color: #7c7c7c;
+}
+
+.rowEvidence:nth-child(odd) {
+	background-color: #9b9b9b;
+}
+
+.rowEvidence:hover {
+	cursor: pointer;
+	opacity: 0.8;
+}
+
+.cellGhosts:hover {
+	cursor: pointer;
+	background-color: #948f64;
+}
+
+.cellEvidence:hover {
+	background-color: #948f64;
+}
