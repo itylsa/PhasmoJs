@@ -113,21 +113,4 @@ function markEvidenceRows(markType) {
 			if (!e.impossible) row.removeClass('rowImpossible');
 		})
 	}
-	var text = 'CLICKED:'
-	evidences.forEach(e => {
-		if(e.clicked) text += ' ' + e.id;
-	});
-	console.log(text);
-	console.log('--')
-	var text = 'IMPOSSIBLE:'
-	evidences.forEach(e => {
-		if(e.impossible) text += ' ' + e.id;
-	});
-	console.log(text);
-	console.log('--')
-	var text = 'RULEDOUT:'
-	evidences.forEach(e => {
-		if(e.ruledout) text += ' ' + e.id;
-	});
-	console.log(text);
 }

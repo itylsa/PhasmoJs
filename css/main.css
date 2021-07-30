@@ -1,6 +1,7 @@
 body {
-	background-color: #5a5a5a;
+	background-color: #1a1a1a;
 	word-break: break-word;
+	color: white;
 }
 
 #mainDiv {
@@ -32,7 +33,7 @@ body > h1 {
 }
 
 #rowGhosts {
-	background-color: #9b9b9b;
+	background-color: #111111;
 }
 
 .rowEvidence {
@@ -40,12 +41,12 @@ body > h1 {
 }
 
 .rowEvidence:nth-child(even) {
-	background: #7c7c7c;
+	background: #000000;
 	filter: brightness(1);
 }
 
 .rowEvidence:nth-child(odd) {
-	background: #9b9b9b;
+	background: #111111;
 }
 
 .rowEvidence:hover {
@@ -58,25 +59,26 @@ body > h1 {
 }
 
 .ui-tooltip.ui-corner-all {
-	background-color: #b9b9b9;
+	background-color: #000000;
+	color: white;
 }
 
 .rowHighlight {
-	background-color: #b6b6b6;
+	background-color: #8a8a8a;
 	opacity: 1 !important;
 }
 
 .columnHighlight {
-	background-color: #b6b6b6 !important;
+	background-color: #8a8a8a !important;
 	opacity: 1 !important;
 }
 
 .clicked {
-	background-color: green;
+	background-color: #001681 !important;
 }
 
 .ruledout {
-	background-color: red;
+	background-color: #6c0000 !important;
 }
 
 .rowImpossible {
@@ -85,4 +87,8 @@ body > h1 {
 
 .columnImpossible {
 	opacity: 0.0;
+}
+
+.columnFound {
+	background-color: #005b00 !important;
 }

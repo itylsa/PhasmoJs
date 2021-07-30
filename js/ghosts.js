@@ -3,7 +3,7 @@ function createGhosts() {
 		{
 			name: 'Banshee',
 			evidences: [getEvidence('emf'), getEvidence('fingerprints'), getEvidence('freeze')],
-			info: ''
+			info: 'asd'
 		},
 		{
 			name: 'Demon',
@@ -78,6 +78,7 @@ function createGhosts() {
 }
 
 function checkGhostStatus(clickedEvidence, ruledoutEvidence) {
+	$('#mainTable td').removeClass('columnFound');
 	ghosts.forEach(function (g) {
 		var hasAllEvidence = clickedEvidence.every(e => g.evidences.includes(e));
 		var hasRuledoutEvidence = ruledoutEvidence.some(e => g.evidences.includes(e));
@@ -88,9 +89,10 @@ function checkGhostStatus(clickedEvidence, ruledoutEvidence) {
 			g.impossible = false;
 			if (clickedEvidence.length === maxClicked) {
 				g.found = true;
+				$('.column' + g.name).addClass('columnFound');
 			}
 			$('.column' + g.name).removeClass('columnImpossible');
 		}
-		if (clickedEvidence < 3) ghosts.forEach(g => g.found = false);
+		if (clickedEvidence < 3)ghosts.forEach(g => g.found = false);
 	})
 }
