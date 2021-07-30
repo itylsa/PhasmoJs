@@ -63,6 +63,7 @@ body > h1 {
 
 .rowHighlight {
 	background-color: #b6b6b6;
+	opacity: 1 !important;
 }
 
 .columnHighlight {
