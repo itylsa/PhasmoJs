@@ -1,8 +1,41 @@
 window.onload = function () {
+	$(document).tooltip({
+		position: {my: 'center', at: 'bottom+15'}
+	});
 	table = $('#mainTable');
 	createEvidences();
 	createGhosts();
 	createTable();
+	
+	$('.cellEvidence').hover(function (e) {
+		e.stopPropagation();
+		e.preventDefault();
+		$(e.target).addClass('cellEvidenceHighlight');
+	}, function (e) {
+		e.stopPropagation();
+		e.preventDefault();
+		$(e.target).removeClass('cellEvidenceHighlight');
+	});
+	
+	$('.cellCheck').hover(function (e) {
+		e.stopPropagation();
+		e.preventDefault();
+		$('.cell' + e.target.dataset.row).addClass('rowEvidenceHighlight');
+	}, function (e) {
+		e.stopPropagation();
+		e.preventDefault();
+		$('.cell' + e.target.dataset.row).removeClass('rowEvidenceHighlight');
+	});
+	
+	$('.cellGhosts').hover(function (e) {
+		e.stopPropagation();
+		e.preventDefault();
+		$('.column' + $(e.target).text()).addClass('columnGhostHighlight');
+	}, function (e) {
+		e.stopPropagation();
+		e.preventDefault();
+		$('.column' + $(e.target).text()).removeClass('columnGhostHighlight');
+	})
 }
 
 function createTable() {
@@ -22,9 +55,9 @@ function createGhostsRow(ghosts, name) {
 	return row;
 }
 
-function createGhostsCell(value, name) {
-	var cl = 'cell' + name;
-	var cell = $('<td id="cell' + value.name + '" class="' + cl + '">').text(value.name);
+function createGhostsCell(ghost, name) {
+	var cl = 'cell' + name + ' column' + ghost.name;
+	var cell = $('<td title="' + ghost.info + '" id="cell' + ghost.name + '" class="' + cl + '">').text(ghost.name);
 	return cell;
 }
 
@@ -40,12 +73,13 @@ function createEvidenceRow(evidence, name) {
 
 function createEvidenceCell(evidence, name) {
 	var cl = 'cell' + name + ' cellEvidence';
-	var cell = $('<td class="' + cl + '">').text(evidence.name);
+	var cell = $('<td title="' + evidence.info + '" class="' + cl + '">').text(evidence.name);
 	return cell;
 }
 
 function createEvidenceGhostCell(ghost, evidence) {
-	var cell = $('<td class="cell' + evidence.id + ' cellCheck">')
+	var cl = 'cell' + evidence.id + ' cellCheck column' + ghost.name;
+	var cell = $('<td data-row="' + evidence.id + '" class="' + cl + '">')
 	if(ghost.evidences.find(function (e) {return e.id === evidence.id})) cell.text('X');
 	return cell;
 }

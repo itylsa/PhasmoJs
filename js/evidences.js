@@ -3,32 +3,38 @@ function createEvidences() {
 		{
 			id: 'Emf',
 			name: 'EMF 5',
-			clicked: false
+			clicked: false,
+			info: ''
 		},
 		{
 			id: 'Fingerprints',
 			name: 'Fingerprints',
-			clicked: false
+			clicked: false,
+			info: ''
 		},
 		{
 			id: 'Freeze',
 			name: 'Freezing Temps',
-			clicked: false
+			clicked: false,
+			info: ''
 		},
 		{
 			id: 'Orb',
 			name: 'Ghost Orb',
-			clicked: false
+			clicked: false,
+			info: ''
 		},
 		{
 			id: 'Book',
 			name: 'Ghost Writing',
-			clicked: false
+			clicked: false,
+			info: ''
 		},
 		{
 			id: 'Spiritbox',
 			name: 'Spirit Box',
-			clicked: false
+			clicked: false,
+			info: ''
 		}
 	]
 }

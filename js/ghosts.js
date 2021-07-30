@@ -3,72 +3,72 @@ function createGhosts() {
 		{
 			name: 'Banshee',
 			evidences: [getEvidence('emf'), getEvidence('fingerprints'), getEvidence('freeze')],
-			info: []
+			info: ''
 		},
 		{
 			name: 'Demon',
 			evidences: [getEvidence('freeze'), getEvidence('book'), getEvidence('spiritbox')],
-			info: []
+			info: ''
 		},
 		{
 			name: 'Hantu',
 			evidences: [getEvidence('fingerprints'), getEvidence('orb'), getEvidence('book')],
-			info: []
+			info: ''
 		},
 		{
 			name: 'Jinn',
 			evidences: [getEvidence('emf'), getEvidence('orb'), getEvidence('spiritbox')],
-			info: []
+			info: ''
 		},
 		{
 			name: 'Mare',
 			evidences: [getEvidence('freeze'), getEvidence('orb'), getEvidence('spiritbox')],
-			info: []
+			info: ''
 		},
 		{
 			name: 'Oni',
 			evidences: [getEvidence('emf'), getEvidence('book'), getEvidence('spiritbox')],
-			info: []
+			info: ''
 		},
 		{
 			name: 'Phantom',
 			evidences: [getEvidence('emf'), getEvidence('freeze'), getEvidence('orb')],
-			info: []
+			info: ''
 		},
 		{
 			name: 'Poltergeist',
 			evidences: [getEvidence('fingerprints'), getEvidence('orb'), getEvidence('spiritbox')],
-			info: []
+			info: ''
 		},
 		{
 			name: 'Revenant',
 			evidences: [getEvidence('emf'), getEvidence('fingerprints'), getEvidence('book')],
-			info: []
+			info: ''
 		},
 		{
 			name: 'Shade',
 			evidences: [getEvidence('emf'), getEvidence('orb'), getEvidence('book')],
-			info: []
+			info: ''
 		},
 		{
 			name: 'Spirit',
 			evidences: [getEvidence('fingerprints'), getEvidence('book'), getEvidence('spiritbox')],
-			info: []
+			info: ''
 		},
 		{
 			name: 'Wraith',
 			evidences: [getEvidence('fingerprints'), getEvidence('freeze'), getEvidence('spiritbox')],
-			info: []
+			info: ''
 		},
 		{
 			name: 'Yokai',
 			evidences: [getEvidence('orb'), getEvidence('book'), getEvidence('spiritbox')],
-			info: []
+			info: ''
 		},
 		{
 			name: 'Yurei',
 			evidences: [getEvidence('freeze'), getEvidence('orb'), getEvidence('book')],
-			info: []
+			info: ''
 		}
 	]
 }

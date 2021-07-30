@@ -1,5 +1,6 @@
 body {
 	background-color: #5a5a5a;
+	word-break: break-word;
 }
 
 #mainDiv {
@@ -10,8 +11,9 @@ body {
 }
 
 #mainTable {
-	width: 100%;
+	/*width: 100%;*/
 	text-align: center;
+	margin: auto;
 }
 
 table, tr, td {
@@ -25,8 +27,8 @@ body > h1 {
 
 #rowGhosts td {
 	padding-bottom: 20px;
-	padding-left: 20px;
-	padding-right: 20px;
+	padding-left: 15px;
+	padding-right: 15px;
 }
 
 #rowGhosts {
@@ -47,14 +49,24 @@ body > h1 {
 
 .rowEvidence:hover {
 	cursor: pointer;
-	opacity: 0.8;
+}
+
+.rowEvidenceHighlight {
+	background-color: #948f64;
 }
 
 .cellGhosts:hover {
 	cursor: pointer;
+}
+
+.columnGhostHighlight {
 	background-color: #948f64;
 }
 
-.cellEvidence:hover {
+.cellEvidenceHighlight {
 	background-color: #948f64;
+}
+
+.ui-tooltip.ui-corner-all {
+	background-color: #b9b9b9;
 }
