@@ -10,34 +10,34 @@ window.onload = function () {
 	createTable();
 	
 	$('.rowEvidence').hover(function (e) {
-		e.stopPropagation();
+		// e.stopPropagation();
 		e.preventDefault();
 		$(e.target).closest('tr').find('td').addClass('rowHighlight');
 	}, function (e) {
-		e.stopPropagation();
+		// e.stopPropagation();
 		e.preventDefault();
 		$(e.target).closest('tr').find('td').removeClass('rowHighlight');
 	});
 	
 	$('.cellGhosts').hover(function (e) {
-		e.stopPropagation();
+		// e.stopPropagation();
 		e.preventDefault();
 		$('.column' + $(e.target).text()).addClass('columnHighlight');
 	}, function (e) {
-		e.stopPropagation();
+		// e.stopPropagation();
 		e.preventDefault();
 		$('.column' + $(e.target).text()).removeClass('columnHighlight');
 	})
 	
 	$('.cellCheck, .cellEvidence').click(function (e) {
-		e.preventDefault();
 		e.stopPropagation();
+		e.preventDefault();
 		clickEvidence(e);
 	})
 	
 	$('.cellCheck, .cellEvidence').contextmenu(function (e) {
-		e.preventDefault();
 		e.stopPropagation();
+		e.preventDefault();
 		ruleoutEvidence(e);
 	})
 	
