@@ -29,13 +29,13 @@ window.onload = function () {
 		$('.column' + $(e.target).text()).removeClass('columnHighlight');
 	})
 	
-	$('.cellCheck').click(function (e) {
+	$('.cellCheck, .cellEvidence').click(function (e) {
 		e.preventDefault();
 		e.stopPropagation();
 		clickEvidence(e);
 	})
 	
-	$('.cellCheck').contextmenu(function (e) {
+	$('.cellCheck, .cellEvidence').contextmenu(function (e) {
 		e.preventDefault();
 		e.stopPropagation();
 		ruleoutEvidence(e);
