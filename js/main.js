@@ -1,4 +1,6 @@
 window.onload = function () {
+	maxClicked = 3;
+	maxRuledout = 3;
 	$(document).tooltip({
 		position: {my: 'center', at: 'bottom+15'}
 	});
@@ -7,35 +9,38 @@ window.onload = function () {
 	createGhosts();
 	createTable();
 	
-	$('.cellEvidence').hover(function (e) {
+	$('.rowEvidence').hover(function (e) {
 		e.stopPropagation();
 		e.preventDefault();
-		$(e.target).addClass('cellEvidenceHighlight');
+		$(e.target).closest('tr').find('td').addClass('rowHighlight');
 	}, function (e) {
 		e.stopPropagation();
 		e.preventDefault();
-		$(e.target).removeClass('cellEvidenceHighlight');
-	});
-	
-	$('.cellCheck').hover(function (e) {
-		e.stopPropagation();
-		e.preventDefault();
-		$('.cell' + e.target.dataset.row).addClass('rowEvidenceHighlight');
-	}, function (e) {
-		e.stopPropagation();
-		e.preventDefault();
-		$('.cell' + e.target.dataset.row).removeClass('rowEvidenceHighlight');
+		$(e.target).closest('tr').find('td').removeClass('rowHighlight');
 	});
 	
 	$('.cellGhosts').hover(function (e) {
 		e.stopPropagation();
 		e.preventDefault();
-		$('.column' + $(e.target).text()).addClass('columnGhostHighlight');
+		$('.column' + $(e.target).text()).addClass('columnHighlight');
 	}, function (e) {
 		e.stopPropagation();
 		e.preventDefault();
-		$('.column' + $(e.target).text()).removeClass('columnGhostHighlight');
+		$('.column' + $(e.target).text()).removeClass('columnHighlight');
 	})
+	
+	$('.cellCheck').click(function (e) {
+		e.preventDefault();
+		e.stopPropagation();
+		clickEvidence(e);
+	})
+	
+	$('.cellCheck').contextmenu(function (e) {
+		e.preventDefault();
+		e.stopPropagation();
+		ruleoutEvidence(e);
+	})
+	
 }
 
 function createTable() {
@@ -73,7 +78,7 @@ function createEvidenceRow(evidence, name) {
 
 function createEvidenceCell(evidence, name) {
 	var cl = 'cell' + name + ' cellEvidence';
-	var cell = $('<td title="' + evidence.info + '" class="' + cl + '">').text(evidence.name);
+	var cell = $('<td data-row="' + evidence.id + '" title="' + evidence.info + '" class="' + cl + '">').text(evidence.name);
 	return cell;
 }
 

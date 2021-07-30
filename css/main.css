@@ -11,9 +11,9 @@ body {
 }
 
 #mainTable {
-	/*width: 100%;*/
 	text-align: center;
 	margin: auto;
+	user-select: none
 }
 
 table, tr, td {
@@ -40,33 +40,47 @@ body > h1 {
 }
 
 .rowEvidence:nth-child(even) {
-	background-color: #7c7c7c;
+	background: #7c7c7c;
+	filter: brightness(1);
 }
 
 .rowEvidence:nth-child(odd) {
-	background-color: #9b9b9b;
+	background: #9b9b9b;
 }
 
 .rowEvidence:hover {
 	cursor: pointer;
 }
 
-.rowEvidenceHighlight {
-	background-color: #948f64;
-}
 
 .cellGhosts:hover {
 	cursor: pointer;
 }
 
-.columnGhostHighlight {
-	background-color: #948f64;
-}
-
-.cellEvidenceHighlight {
-	background-color: #948f64;
-}
-
 .ui-tooltip.ui-corner-all {
 	background-color: #b9b9b9;
+}
+
+.rowHighlight {
+	background-color: #b6b6b6;
+}
+
+.columnHighlight {
+	background-color: #b6b6b6 !important;
+}
+
+.clicked {
+	background-color: green;
+}
+
+.ruledout {
+	background-color: red;
+}
+
+.rowImpossible {
+	opacity: 0.5;
+}
+
+.columnImpossible {
+	opacity: 0.5;
 }

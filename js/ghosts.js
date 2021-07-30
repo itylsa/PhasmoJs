@@ -71,4 +71,26 @@ function createGhosts() {
 			info: ''
 		}
 	]
+	ghosts.forEach(function (g) {
+		g.impossible = false;
+		g.found = false;
+	})
+}
+
+function checkGhostStatus(clickedEvidence, ruledoutEvidence) {
+	ghosts.forEach(function (g) {
+		var hasAllEvidence = clickedEvidence.every(e => g.evidences.includes(e));
+		var hasRuledoutEvidence = ruledoutEvidence.some(e => g.evidences.includes(e));
+		if (!hasAllEvidence || hasRuledoutEvidence) {
+			$('.column' + g.name).addClass('columnImpossible');
+			g.impossible = true;
+		} else if ((hasAllEvidence || clickedEvidence.length === 0) && !hasRuledoutEvidence) {
+			g.impossible = false;
+			if (clickedEvidence.length === maxClicked) {
+				g.found = true;
+			}
+			$('.column' + g.name).removeClass('columnImpossible');
+		}
+		if (clickedEvidence < 3) ghosts.forEach(g => g.found = false);
+	})
 }
