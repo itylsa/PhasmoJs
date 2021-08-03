@@ -40,7 +40,6 @@ window.onload = function () {
 		e.preventDefault();
 		ruleoutEvidence(e);
 	})
-	
 }
 
 function createTable() {
@@ -48,6 +47,18 @@ function createTable() {
 	evidences.forEach(function (e) {
 		table.append(createEvidenceRow(e, e.id));
 	})
+	ghosts.forEach(createGhostInfoRow);
+}
+
+function createGhostInfoRow(ghost) {
+	var headlineRow = $('<tr>');
+	headlineRow.append($('<td>'));
+	ghosts.forEach(function (g) {
+		headlineRow.append($('<td>').text(ghost.name === g.name ? 'X' : ''));
+	})
+	table.append(headlineRow);
+	var contentRow = $('<tr>').append($('<td colspan="' + ghosts.length + 1 + '" style="white-space: pre-line">').html(ghost.info));
+	table.append(contentRow);
 }
 
 function createGhostsRow(ghosts, name) {
@@ -85,6 +96,8 @@ function createEvidenceCell(evidence, name) {
 function createEvidenceGhostCell(ghost, evidence) {
 	var cl = 'cell' + evidence.id + ' cellCheck column' + ghost.name;
 	var cell = $('<td data-row="' + evidence.id + '" class="' + cl + '">')
-	if(ghost.evidences.find(function (e) {return e.id === evidence.id})) cell.text('X');
+	if (ghost.evidences.find(function (e) {
+		return e.id === evidence.id
+	})) cell.text('X');
 	return cell;
 }

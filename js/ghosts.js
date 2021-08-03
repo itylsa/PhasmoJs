@@ -3,7 +3,9 @@ function createGhosts() {
 		{
 			name: 'Banshee',
 			evidences: [getEvidence('emf'), getEvidence('fingerprints'), getEvidence('freeze')],
-			info: 'asd'
+			info: '<b>asd</b>\n' +
+				'askjd aksljd klasjdkl asjdkl ajsdkl ajsdlk as\n' +
+				'1'
 		},
 		{
 			name: 'Demon',
